@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Petlu RechalJyothi</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #0a192f, #0d203a);
+      color: #ccd6f6;
+    }
+
+    .sidebar {
+      position: fixed;
+      width: 35%;
+      height: 100vh;
+      background: transparent;
+      padding: 60px 40px;
+    }
+
+    .profile img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .profile h1 {
+      font-size: 28px;
+      color: #ccd6f6;
+    }
+
+    .profile h2 {
+      font-size: 16px;
+      color: #ccd6f6;
+      margin: 5px 0 20px 0;
+    }
+
+    .profile p {
+      color: #8892b0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .menu {
+      margin-top: 40px;
+    }
+
+    .menu a {
+      display: block;
+      color: #8892b0;
+      font-size: 14px;
+      margin: 10px 0;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      color: #ccd6f6;
+    }
+
+    .socials {
+      margin-top: 50px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .socials a {
+      font-size: 20px;
+      color: #8892b0;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      color: #ccd6f6;
+    }
+
+    .main {
+      margin-left: 35%;
+      width: 65%;
+      padding: 60px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    h3 {
+      color: #ccd6f6;
+      margin-bottom: 20px;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    p, li {
+      font-size: 16px;
+      color: #8892b0;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        border-bottom: 1px solid #112240;
+      }
+
+      .main {
+        width: 100%;
+        margin-left: 0;
+        padding: 20px;
+      }
+    }
+    .social-icon-img {
+    height: 70px;
+    padding: 20px;
+}
+.skill-button {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    padding: 10px 20px;
+    color: #64ffda;
+    border: 1px solid #64ffda;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .skill-button:hover {
+    background-color: #112240;
+  }
+   .experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 60px;
+  }
+
+  .job {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .job .date {
+    width: 120px;
+    color: #8892b0;
+    font-size: 14px;
+  }
+
+  .job .details {
+    flex: 1;
+  }
+
+  .job .details h3 {
+    font-size: 18px;
+    color: #ccd6f6;
+    margin: 0;
+  }
+
+  .job .details h3 .company {
+    color: #64ffda;
+    font-weight: bold;
+  }
+
+  .job .details p {
+    color: #8892b0;
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .tags {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag {
+    background-color: #112240;
+    color: #64ffda;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .projects-container {
+    margin-top: 60px;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .project img {
+    width: 220px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .project-content {
+    flex: 1;
+  }
+
+  .project-content h3 {
+    font-size: 18px;
+    color: #ccd6f6;
+    margin: 0;
+  }
+
+  .project-content h3 a {
+    color: #ccd6f6;
+    text-decoration: none;
+  }
+
+  .project-content h3 a:hover {
+    color: #64ffda;
+  }
+
+  .project-content p {
+    color: #8892b0;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 10px 0;
+  }
+
+  .stars {
+    color: #8892b0;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag {
+    background-color: #112240;
+    color: #64ffda;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <div class="profile">
+      <img src="images/rcpic.jpg" alt="Profile Picture" style="width:100px; border-radius: 50%;" />
+
+      <h1>Petlu Rechal Jyothi</h1>
+      <h2>Java Web Developer</h2>
+      <p>I build accessible, pixel-perfect digital experiences for the web.</p>
+    </div>
+
+    <div class="menu">
+      <a href="#about">ABOUT</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#experience">EXPERIENCE</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#resume">RESUME</a>
+    </div>
+
+    <div class="socials">
+       <div class="social-icons">
+            <div class="social-icon">
+              <a href="https://github.com/rechaljyothi910" target="_blank">
+                    <img src="data:image/png;base64,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" class="social-icon-img">
+                </a>
+                <a href="https://www.instagram.com/__rechaljyothi__/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1024px-Instagram-Icon.png" class="social-icon-img">
+                </a>
+              <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAYFBMVEX///+AgIB7e3u9vb34+PiLi4t2dnbKysq6urqPj4/7+/t6enqCgoKGhob39/ezs7Pr6+vX19ehoaGoqKjl5eWVlZWZmZna2trp6enx8fHGxsasrKzg4ODR0dGlpaWdnZ3Fh+H9AAAJr0lEQVR4nO2daduqIBCGEa3cs7JFbfn///Joy3ktYWZAXOri+azGHYrwzDAyZmVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlNXt557K6BYu5K7hV5TlUp8vXi2UUce7MX5xH0TLwcwVKLyuD5TewtcWX+1VBgwzPfhJN3V4tRQuX0pEnf/Ft3fcnHrgZBlgepm5lT90uIF9Rxd/bgQ/xZO3JAc+Hb+e76ya9Uy/JTwA6fHH8bcAGcSMGnLph5sQDAeLmZ3qwEQ/On4B58EuANeL+Y7gJf2MUbYlv3wnXvwZYI7rvD+HU7RlASetRLH7uHm3Et3+TGzeeujWDKFm9AE8/2YVNJxZPwnLqpgyl+LnOyLa/2YV1J+4enbihHDtH4c1+DKcp4V248F1/bnLX+CsuchtXI1sQ+nCtbtcNrXRHaPe+uU2PJNtpnU5N9KGioowePK8P9UnjTOzPCzFdU1rtRGUz5yYdWiPO6UYlAtajachC2qG1XPyHRxMR0HGCkGVL6sHxfBDJgE6UEgeah8qpyZ7y6U1enthKxcGfB6Kr0OLoyFyVKdvfbH06hUoroWilRugsYM98DMBSabWuTMiDqRFXlClYq8GlIqHYiZwvYOPWKBI6POk4kSNK2bbWIKwRT5MBHpXtFh3CdxNrVG3U/SQ9Qh7kkwAeNaLTUsJ4D12MH6ZAPMJtCoQdLCUM4P+L38ZHPMOA+41wlJUTIsMy36IZAYaVg5Zn/RLzAkXCcAUOzPxW4K0yqBNyi25YqNqHjJXgyMX3Y66IU3iQSeqZlgYhMofnt/EQU7AHnbhZEOgQshK8Lt+OZd1gkaP7XFmLEFtL78Z5FgvYlI8fq1Y9QuaDz2K8HgOxqMC/OXmaK5qEHmIYjGCjFrDzm5RhL0LUtlsPDejBPRj7rzCoLiFL4V8YHBHx7v8D6hOy8AqPqMMi7uBRtPXj+oQo4pA2KhwX41W7mfqELERGa3eoV78HDwJ899bKHoQshRH/D2emAWHfsIlJmCJkGXyjLlZDICK+Ia/eX8b9CNkJROSLIZxiVwmwLyGyPHMS8x7jCr5FOwvUvoQsR6b3pt2pC/RrDj90VuC9CVkG52dGksxjTcEBI37ozhb7E7IzjGjUY4R9w07yqCFCDLGblqsPCJtEe5EnbYIQMSz53hTiBvwr+V5o9BkhxH7akI2K+YbiP9IMIYLoCG8fZUCkByVDmiFChniMQf8VcQFuGpBspTBIiCEugE1HNEA4+iIFNEeIzTX2/aybE2KMyudO5giRhNt+ZngGTw5jIMZukBBLC+/hMZ624JXBVBCThFhCizZi1gPQLKGHIFZ6I2pxBa8awwtto4SojVrBp0uaCPcgAmiYkIWIRbRFzhcJXp45PtYks4Q1IticSNljDK/geinGAI0T1ojwCs5Xe/WncFIzRwHNE2I2aqyEiAQPOOHBNk+I5ZInJR0x9eG5ICUANAAhK3bgjUq3UT04iEcCHIQQ208EzbHehMwDP33DEQlZdiOEn3FAeJC50qZIwxCyAkZcUhBdMJeeX4kTpIEI0b2LuMd4QeYO1EnuUITstAcJMTPcXGLSYIQMfi06SE7xBc75VYi/DkaIbkCVOUd3bYTJaC0l5LzyoQgJmfOAUww7vw9EalhrIEL4KXpqIctjzElnE8NawxDCrtT/X4nFiDkp5ZcTI3eDEFIz53kiQsxpJwMW6eCE9FoTgnAfy7FB5u/sgBK5G4Bwo5JYvv30+88KRcVIiOYJj2olez6i0vlN5WTK7gDjhEgwsau3CXSmBNjc5mjMxzThGZ6sCRH/ptCFct07HNEwIRzikzRy+1oRexqlRri8CtsQhEjuiUTRNdQGxDdAGCXMkYWvTFHVWDdIUrP87CuIaJIQW9kD8lMsqRlQBAZEDBIi63pQsZ+v9Qsa8R2w3jdHiN1kMH+yR1a84LX5Tu5QGiNM4RXvsiwq/Qq20TqFrXSnkjqUpghTOC05cqlVR4TNaYxR5A+S1pExRFggedfu4yAq0ocecUfE4JfZw2YIkXpEr/onGRzqlOnp/HoVPBa54mfRCCECmPyvYaNTXCv6b22nyHArRjRCiFSUat0/mfKsLmoZo9grU7g7wAQhFtpuv4+RhNuOorc5GRbRFyEaIIQBefV+76ghfs6rkd0BsaDISn9CZGtAZ0vpWcEC6CZUekhuVNdj7E2IJJjcun+JwhJSsPjz4LPjDmJPwhDeFOwIt5MeqV7TQeQZIxtHO73YkxBxfiVLN9SzfzRCkhKL7U//8Pv7EWKAMofhSPAb+ULm+p/BafgnYi9CJAIGWCiEqpOJ3ClE0qHfS6/3IUScX9DpgzeGwIDNeAyd+t77PQiRrQFCx56MiAQlYOf/rS65PiFibcdYkBaM3qDhQTh603aKtQmPcOY8wYwGQoyE0mHwI9LaAKFLiDzspH0y0ncpKfoJ30N/dWQ0CeFvehALf4WS+VB3XiLUBUZ8vYv1CNGiMKQm1ogiZ4IT49chrVSOFmGB7FajZxEI/KWIvAccy0g5hLqEKTwzpPbB/VIdxEhlBzhcrovfowUahMjUN1KqL+h9+ANcbYu78Db/u1gz8VcnxLx7xUqf7xmWieoefmT5vUvVCbH8WOVKCuHq4DwuyWPks1MiIe7UOg0VK2EhedfKfdAoK3eHoPma30pjywmSZeusCzXCBDFGJZ4lpvR0Pp5PevtN0DoywgFXXlUQri00SXFvxGMUt1ivbuJUNehJdeZNEPLrJHy1QvXIpVb90skAaykj6hDu8HYMJ081IKJBOFKNNplUYz7qhLS9DwMKriPTkWq16/GLegoQlZ7FmlCl6jyalzSKlGI+0YZt6IR9d6KbUqYQ81nm7ET++oOJgglmlNETP5cp86gHC4vCTKSc3IuLkIXEGJikZspEoma33pf/tE8fmis+Y0ZIkZWXmi/psA3lQZTWTJlMNMSo6ZeMknE/sx5sRApOBs3oj+Rx3RVfV/MTXKDgLv74gjW8AfB17PxEaPVz+yNSMeWL9dqeGeos879DL8dTY2fBV6gVflf4QtQ3qZU5pZ5n9w3ih9ZCAckH+k69Fzz4wY+tflQLSX/us9X8M62Lkr30TeJJZyn0Y4+iID6t9km6uUuY5YFUz/4qSUrj/Ewv8kRaX/wS/8JLA9zAn/3CDBUuh+KtNb5tNifxAK17ttmp7UKflXhSEeyW9LL70sex5tvQTOviuE6ib4Pky8Q/0035NLtc4+XXUPJomew2mWJ+SJiey2vgLOcvJ6jK3NNPngi9eWtOX3y3srKysrKysrKysrKysrKysrKysrKysrIC9Q+ft8ag4cpPagAAAABJRU5ErkJggg==" class="social-icon-img">
+                </a>
+                <a href="https://www.linkedin.com/in/petlu-rechal-jyothi-01972527b/">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="social-icon-img">
+                </a>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="main">
+    <section id="about">
+      <h3>ABOUT</h3>
+      <p>
+      I’m a <span style="color:#ccd6f6;">Developer</span> passionate about crafting clean, accessible user interfaces that blend thoughtful <span style="color:#ccd6f6;">design</span> with purposeful <span style="color:#ccd6f6;">engineering</span>. My focus is on writing pixel-perfect, semantic <span style="color:#ccd6f6;">HTML</span> and modern <span style="color:#ccd6f6;">CSS</span>, ensuring websites are not only beautiful but also responsive and usable across all devices.
+    </p>
+    <p>
+      I enjoy building intuitive digital experiences and continuously refining my skills in <span style="color:#ccd6f6;">frontend development</span>. With a strong foundation in <span style="color:#ccd6f6;">HTML</span>, <span style="color:#ccd6f6;">CSS</span>, and <span style="color:#ccd6f6;">Python</span>, I take pride in writing clean, maintainable code and delivering <span style="color:#ccd6f6;">user-first</span> designs.
+    </p>
+    <p>
+      When I’m not coding, you’ll often find me exploring <span style="color:#ccd6f6;">new technologies</span>, learning something creative, or enjoying time with <span style="color:#ccd6f6;">family and friends</span>.
+    </p>
+    </section>
+
+    <section id="skills" style="margin-top: 60px;">
+  <h3>SKILLS</h3>
+  <div>
+    <a href="#" class="skill-button">HTML</a>
+    <a href="#" class="skill-button">CSS</a>
+    <a href="#" class="skill-button">Python</a>
+  </div>
+</section>
+<section id="experience">
+  <h3 style="color:#ccd6f6;  margin-bottom: 20px;">EXPERIENCE</h3>
+
+  <div class="experience-container">
+
+    <div class="job">
+      <div class="date">May2025 — Present</div>
+      <div class="details">
+        <h3>Software Developer Intern · <span class="company">TAP Academy</span></h3>
+        <p>
+          Contributing to the development of full-stack applications using Java, Spring Boot, and frontend technologies.
+          Collaborated on UI improvements, backend API integration, and real-world deployment techniques.
+        </p>
+        <div class="tags">
+          <div class="tag">Java</div>
+          <div class="tag">Spring Boot</div>
+          <div class="tag">JavaScript</div>
+          <div class="tag">React JS</div>
+          <div class="tag">MySQL</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section id="projects" class="projects-container">
+  <h3 style="color:#ccd6f6;  margin-bottom: 20px;">PROJECTS</h3>
+
+  <div class="project">
+    <img src="images/protolioscreenshot.PNG" alt="Portfolio Screenshot" />
+    <div class="project-content">
+      <h3><a href="https://your-portfolio-link.com" target="_blank">Portfolio Website ↗</a></h3>
+      <p>
+        A personal portfolio website showcasing my skills, experience, and projects.
+        Designed and built using modern HTML and CSS with a clean and responsive layout.
+      </p>
+      
+      <div class="tags">
+        <div class="tag">HTML</div>
+        <div class="tag">CSS</div>
+        <div class="tag">Responsive Design</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section id="resume" style="margin-top: 60px;">
+  <h3>RESUME</h3>
+  <p>
+    I’m currently seeking opportunities where I can grow as a developer and contribute to impactful projects. You can view my resume below to learn more about my skills, education, and experience.
+  </p>
+  <a 
+    href="https://drive.google.com/drive/home" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    style="
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      color: #64ffda;
+      border: 1px solid #64ffda;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    "
+    onmouseover="this.style.backgroundColor='#112240'" 
+    onmouseout="this.style.backgroundColor='transparent'"
+  >
+    View Resume
+  </a>
+</section>
+
+
+  </div>
+
+</body>
+</html>
+
